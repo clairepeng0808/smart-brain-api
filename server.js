@@ -23,12 +23,12 @@ app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("its working!");
-  db.select("*")
-    .from("users")
-    .orderBy("id", "asc")
-    .then((users) => {
-      res.json(users);
-    });
+  //   db.select("*")
+  //     .from("users")
+  //     .orderBy("id", "asc")
+  //     .then((users) => {
+  //       res.json(users);
+  //     });
 });
 app.post("/signin", (req, res) => signin.handleSignin(req, res, db, bcrypt));
 
