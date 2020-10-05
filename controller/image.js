@@ -6,7 +6,7 @@ const handleImageUrl = (req, res) => {
   });
   const { input } = req.body;
   app.models
-    .predict(Clarifai.FACE_DETECT_MODEL, input)
+    .predict("c0c0ac362b03416da06ab3fa36fb58e3", input)
     .then((data) => res.json(data))
     .catch((err) => res.status(400).json("Unable to fetch API"));
 };

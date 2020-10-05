@@ -7,6 +7,14 @@ import signin from "./controller/signin.js";
 import profile from "./controller/profile.js";
 import image from "./controller/image.js";
 
+// const db = knex({
+//   client: "pg",
+//   connection: {
+//     host: "127.0.0.1",
+//     user: "clairepeng",
+//     database: "smart-brain-db",
+//   },
+// });
 const db = knex({
   client: "pg",
   connection: {
@@ -43,13 +51,5 @@ app.post("/imageurl", (req, res) => image.handleImageUrl(req, res));
 
 const PORT = process.env.PORT;
 app.listen(PORT || 3000, () => {
-  console.log(`apps running on port ${PORT}`);
+  console.log(`apps running on port ${PORT} `);
 });
-
-/*
-'/' -> res with index.html
-'/signin' -> POST success/fail
-'/register' -> POST = user
-'/profile/:userid' -> GET = user
-'/image' -> PUT = user
-*/
