@@ -2,7 +2,7 @@ import Clarifai from "clarifai";
 
 const handleImageUrl = (req, res) => {
   const app = new Clarifai.App({
-    apiKey: "507b9eda218142d19aaf928ae3d22d53",
+    apiKey: process.env.CLARIFAI_API_KEY,
   });
   const { input } = req.body;
   app.models
