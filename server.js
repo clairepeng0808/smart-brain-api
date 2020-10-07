@@ -7,23 +7,27 @@ import signin from "./controller/signin.js";
 import profile from "./controller/profile.js";
 import image from "./controller/image.js";
 
-// const db = knex({
-//   client: "pg",
-//   connection: {
-//     host: "127.0.0.1",
-//     user: "clairepeng",
-//     database: "smart-brain-db",
-//   },
-// });
+// This is for dev db
 const db = knex({
   client: "pg",
   connection: {
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false,
-    },
+    host: "127.0.0.1",
+    user: "clairepeng",
+    password: "",
+    database: "smart-brain-db",
   },
 });
+
+// This is for deployment.
+// const db = knex({
+//   client: "pg",
+//   connection: {
+//     connectionString: process.env.DATABASE_URL,
+//     ssl: {
+//       rejectUnauthorized: false,
+//     },
+//   },
+// });
 
 const app = express();
 app.use(express.json());

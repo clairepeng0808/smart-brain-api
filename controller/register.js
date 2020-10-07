@@ -1,6 +1,5 @@
 const handleRegister = async (req, res, db, bcrypt) => {
   const storeHashInDatabase = (hash) => {
-    // Store the hash in your password DB
     return hash; // For now we are returning the hash for testing at the bottom
   };
   const storeUserPassword = (password, salt) =>
